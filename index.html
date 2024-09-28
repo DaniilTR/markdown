@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Заметки</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Markdown Заметки</h1>
+    </header>
+    <main>
+        <section id="notes">
+           
+            <section id="editor">
+                <h3 class="Heading">Новая заметка</h3>
+                <div class="Note">
+                    <textarea id="note-input-name" class="Name-note" placeholder="Название Заметки"></textarea>
+                    <textarea id="note-input" placeholder="Напишите свою заметку здесь..."></textarea>
+                </div>
+                <button id="save-note">Сохранить</button>
+            </section> 
+            <div id="note-list">
+                <div class="serch">
+                    <h3>Это ваши заметки</h3>
+                    <input type="text" id="search" placeholder="Поиск заметок...">
+                </div>
+                <div class="notes-container" id="notes-container" >
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script src="scriptstyle.js"></script>
+</body>
+</html>
