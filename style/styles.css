@@ -104,11 +104,15 @@ main {
 }
 
 /* Контейнер для списка заметок */
+#note-list {
+  padding-bottom: 100px;
+}
+
 #note-list .notes-container {
   display: flex;
   flex-direction: row;
   gap: 15px;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding-top: 15px;
 }
 @media screen and (max-width: 480px) {
@@ -122,14 +126,29 @@ main {
   background-color: var(--color-note);
   border: 1px solid #666;
   margin: 0 2%;
-  width: 430px;
+  width: calc((90% - 30px) / 3);
+  min-height: 200px;
   padding: 15px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  border-radius: 4px;
+}
+.note-item:nth-child(3n+1) {
+  margin-left: 0;
+}
+.note-item:nth-child(3n) {
+  margin-right: 0;
 }
 .note-item h3 {
   margin: 0;
   font-size: 18px;
+}
+@media screen and (max-width: 960px) {
+  .note-item {
+    width: calc((90% - 30px) / 2);
+    margin: 0;
+  }
 }
 @media screen and (max-width: 480px) {
   .note-item {
