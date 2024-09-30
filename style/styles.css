@@ -1,0 +1,161 @@
+@charset "UTF-8";
+/* Переменные для основных цветов */
+:root {
+  --color-main: #feefc3;
+  --color-cont: #ffd0ad;
+  --color-note: #f7e4d2;
+}
+
+/* Миксины для повторяющихся стилей */
+/* Общие стили для страницы */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffebd6;
+  color: #333333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Стили для шапки страницы */
+header {
+  background-color: var(--color-cont);
+  padding: 16.5px;
+  text-align: center;
+}
+
+/* Основные стили для контента */
+main {
+  padding: 0 5%;
+}
+
+/* Стили для секции редактора заметок */
+#editor {
+  margin-bottom: 22px;
+}
+
+/* Стили для заметки */
+.Note {
+  background-color: var(--color-note);
+  border: 1px solid #666;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Входное поле для названия заметки */
+#note-input-name, #note-input {
+  background-color: var(--color-note);
+  border: 1px solid #666;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#note-input-name {
+  font-size: 1.14em;
+  height: 40px;
+  border-bottom: 1px solid #8f8e8e;
+}
+
+#note-input {
+  height: 165px;
+  padding: 11px;
+  font-size: 1.12em;
+}
+
+#save-note {
+  background-color: #D09064;
+  border: none;
+  border-radius: 5.5px;
+  cursor: pointer;
+  margin-top: 11px;
+  padding: 11px 22px;
+}
+
+/* Стили для секции заметок */
+#notes {
+  margin-top: 22px;
+}
+
+#search {
+  background-color: var(--color-cont);
+  border: 1px solid #666;
+  border-radius: 5px;
+  margin: 9px 0;
+}
+
+/* Заголовок списка заметок */
+.serch {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  padding: 10px;
+  background-color: var(--color-cont);
+  border: 1px solid #666;
+  border-radius: 5px;
+}
+.serch h3 {
+  margin: 9px 0;
+  padding-top: 10px;
+}
+
+/* Контейнер для списка заметок */
+#note-list .notes-container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: flex-start;
+  padding-top: 15px;
+}
+@media screen and (max-width: 480px) {
+  #note-list .notes-container {
+    flex-direction: column;
+  }
+}
+
+/* Элемент заметки */
+.note-item {
+  background-color: var(--color-note);
+  border: 1px solid #666;
+  margin: 0 2%;
+  width: 430px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.note-item h3 {
+  margin: 0;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .note-item {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* Кнопки */
+.delete-button, .edit-button {
+  background-color: #D09064;
+  border: none;
+  border-radius: 5.5px;
+  cursor: pointer;
+  margin-top: auto; /* Перемещает кнопку вниз */
+  margin-right: 10px;
+  padding: 5px;
+}
+.delete-button:hover, .edit-button:hover {
+  background-color: #a96536;
+}
+
+.button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*# sourceMappingURL=styles.css.map */
