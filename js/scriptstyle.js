@@ -1,44 +1,32 @@
 window.addEventListener('load', () => {
-  const notesContainer = document.getElementById('notes-container');
+    const notesContainer = document.getElementById('notes-container');
+    
+    if (notesContainer) {
+        // Функция для обновления flex-wrap
+        const updateFlexWrap = () => {
+            const noteItems = notesContainer.querySelectorAll('.note-item'); // обновляем количество noteItems
+            
+            if (noteItems.length > 3) {
+                notesContainer.style.flexWrap = 'wrap';
+            } else {
+                notesContainer.style.flexWrap = 'nowrap'; // Если элементов 3 или меньше, возвращаем обратно nowrap
+            }
+        };
   
-  if (notesContainer) {
-      const noteItems = document.querySelectorAll('.note-item');
-      
-      // Изменение flex-wrap, если элементов больше 3
-      const updateFlexWrap = () => {
-          if (noteItems.length > 3) {
-              notesContainer.style.flexWrap = 'wrap';
-          }
-      };
-
-      // Первоначальная проверка
-      updateFlexWrap();
-
-      // Следим за изменениями в контейнере
-      const observer = new MutationObserver(() => {
-          updateFlexWrap();
-      });
-
-      observer.observe(notesContainer, { childList: true, subtree: true });
-  }
-});
-window.addEventListener('load', () => {
-  const notesContainer = document.getElementById('notes-container');
+        // Первоначальная проверка
+        updateFlexWrap();
   
-  // Проверяем, что контейнер существует
-  if (notesContainer) {
-      const noteItems = document.querySelectorAll('.note-item');
-      
-      // Проверяем количество .note-item и изменяем flex-wrap на wrap, если больше 3
-      if (noteItems.length > 3) {
-          notesContainer.style.flexWrap = 'wrap';
-      }
-  } else {
-      console.error('Контейнер с ID notes-container не найден.');
-  }
-});
-
-
+        // Следим за изменениями в контейнере
+        const observer = new MutationObserver(() => {
+            updateFlexWrap();
+        });
+  
+        observer.observe(notesContainer, { childList: true, subtree: true });
+    } else {
+        console.error('Контейнер с ID notes-container не найден.');
+    }
+  });
+  
 function updatePlaceholder() {
     const searchInput = document.getElementById('search');
     if (window.innerWidth <= 480) {
